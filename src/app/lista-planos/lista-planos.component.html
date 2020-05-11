@@ -1,4 +1,7 @@
-<div>
+<app-pop-up (closePop)='FecharPopUp()' *ngIf='PopUp'>
+  <app-cadastro-planos></app-cadastro-planos>
+</app-pop-up>
+<div class="container">
   <h1>Lista de Planos</h1>
   <table>
     <thead>
@@ -26,8 +29,10 @@
       </tr>
     </tbody>
   </table>
-
+  <div class="barra-footer">
+    <button class="btn btn-success" type="button" (click)='CadastrarPlano()'>Criar novo</button>
+  </div>
   <footer>
-    <a class="btn" [routerLink]="['/home']">Voltar</a>
+    <a class="btn btn-info" [routerLink]="['/home']">Voltar</a>
   </footer>
 </div>

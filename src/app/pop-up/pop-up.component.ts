@@ -1,0 +1,21 @@
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-pop-up',
+  templateUrl: './pop-up.component.html',
+  styleUrls: ['./pop-up.component.css']
+})
+export class PopUpComponent implements OnInit {
+  @Output() closePop: EventEmitter<string> =
+    new EventEmitter<string>();
+
+  constructor() { }
+
+  FecharPopUp(){
+    this.closePop.emit();
+  }
+
+  ngOnInit(): void {
+  }
+
+}

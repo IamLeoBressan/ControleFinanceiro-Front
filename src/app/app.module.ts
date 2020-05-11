@@ -8,6 +8,9 @@ import { ListaPrevisaoComponent } from './lista-previsao/lista-previsao.componen
 import { LoginComponent } from './login/login.component';
 import { CentroControleComponent } from './centro-controle/centro-controle.component';
 import { ListaPlanosComponent } from './lista-planos/lista-planos.component';
+import { PopUpComponent } from './pop-up/pop-up.component';
+import { CadastroPlanosComponent } from './cadastro-planos/cadastro-planos.component';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { ListaPlanosComponent } from './lista-planos/lista-planos.component';
     ListaPrevisaoComponent,
     LoginComponent,
     CentroControleComponent,
-    ListaPlanosComponent
+    ListaPlanosComponent,
+    PopUpComponent,
+    CadastroPlanosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

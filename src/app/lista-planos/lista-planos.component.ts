@@ -2,13 +2,20 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   templateUrl: './lista-planos.component.html',
-  styleUrls: ['./lista-planos.component.css']
+  styleUrls: ['./lista-planos.component.css'],
 })
 export class ListaPlanosComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  PopUp: boolean = true;
 
-  ngOnInit(): void {
+  CadastrarPlano() {
+    this.PopUp = true;
   }
 
+  ngOnInit(): void {}
+
+  FecharPopUp() {
+    this.PopUp = false;
+  }
 }

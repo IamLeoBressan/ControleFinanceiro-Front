@@ -1,1 +1,43 @@
-<p>login works!</p>
+<div class="form-login">
+  <h1 class="titulo">Login</h1>
+  <form #form='ngForm'>
+    <div class="row">
+      <div class="col-md-12">
+        <label for="username">Usúario</label>
+        <input type="text" class="form-control" id="username" name="username" [(ngModel)]='login.username'/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label for="rememberMe">Lembrar de mim: </label>
+        <input
+          type="checkbox"
+          id="rememberMe"
+          name="rememberMe"
+          [(ngModel)]='login.rememberMe'
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label for="password">Senha</label>
+        <div>
+          <img class='img-eyes' src='./assets/images/{{imgSenha}}-eye.png' (click)='VisualizarSenha()'/>
+          <input
+            [type]='tpSenha'
+            id="password"
+            name="password"
+            class="form-control"
+            [(ngModel)]='login.password'
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+  <footer>
+    <button type="submit" class="btn btn-primary">Logar</button>
+  </footer>
+</div>
+
+{{login | json}}

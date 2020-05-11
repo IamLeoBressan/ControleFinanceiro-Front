@@ -4,13 +4,20 @@ h1{
 }
 
 table{
+  margin-top: 40px;
   width: 100%;
 }
 
-td{
+td, th{
   text-align: center;
 }
 
 footer{
   margin-top: 10px;
+}
+
+.barra-footer{
+  padding-top: 20px;;
+  width: 100%;
+  text-align: center;
 }

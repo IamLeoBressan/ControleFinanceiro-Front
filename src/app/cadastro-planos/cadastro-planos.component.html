@@ -1,0 +1,38 @@
+<div class="container">
+  <h1 class="titulo">Cadastro de novo plano</h1>
+  <form class="form-cadastro-plano" #form="ngForm">
+    <div class="row">
+      <div class="col-md-12">
+        <label for="titulo">Título</label>
+        <input id="titulo" class="form-control" name='titulo' [(ngModel)]='plano.titulo' #validField='ngModel' required/>
+        <div [hidden]='validField.valid || validField.untouched' class="alert alert-danger">
+          Preencha o campo Titulo
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label for="valorInicial">Valor Inicial</label>
+        <input
+          type="number"
+          class="form-control"
+          id="valor-inicial"
+          name="valorInicial"
+          [(ngModel)]='plano.valorInicial'
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label for="descricao">Descrição</label>
+        <textarea rows="6" required id="descricao" name='descricao' class="form-control" [(ngModel)]='plano.descricao' #descrValid='ngModel'></textarea>
+        <div [hidden]='descrValid.valid || descrValid.untouched' class="alert alert-danger">
+          Preencha o campo descrição
+        </div>
+      </div>
+    </div>
+  </form>
+  <footer>
+    <button type="button" class="btn btn-primary">Salvar</button>
+  </footer>
+</div>
