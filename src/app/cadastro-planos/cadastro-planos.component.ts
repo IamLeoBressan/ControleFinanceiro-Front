@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {Plano} from '../data/plano';
+import {IPlano} from '../data/plano';
 
 @Component({
   selector: 'app-cadastro-planos',
@@ -11,10 +11,10 @@ export class CadastroPlanosComponent implements OnInit {
 
   constructor() { }
 
-  plano: Plano = {
+  plano: IPlano = {
+    id: 0,
     titulo: '',
-    descricao: '',
-    valorInicial: 0
+    valorBase: 0
   }
 
   ngOnInit(): void {

@@ -11,6 +11,8 @@ import { ListaPlanosComponent } from './lista-planos/lista-planos.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { CadastroPlanosComponent } from './cadastro-planos/cadastro-planos.component';
 import { FormsModule} from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
+import { authInterceptorProviders } from './login/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,10 @@ import { FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
-export interface Plano{
+export interface IPlano{
+  id: number
   titulo: string,
-  valorInicial: number,
-  descricao: string
+  valorBase: number,
 }

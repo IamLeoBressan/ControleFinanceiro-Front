@@ -18,19 +18,19 @@
           class="form-control"
           id="valor-inicial"
           name="valorInicial"
-          [(ngModel)]='plano.valorInicial'
+          [(ngModel)]='plano.valorBase'
         />
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-12">
         <label for="descricao">Descrição</label>
-        <textarea rows="6" required id="descricao" name='descricao' class="form-control" [(ngModel)]='plano.descricao' #descrValid='ngModel'></textarea>
+        <textarea rows="6" required id="descricao" name='descricao' class="form-control" [(ngModel)]='plano.titulo' #descrValid='ngModel'></textarea>
         <div [hidden]='descrValid.valid || descrValid.untouched' class="alert alert-danger">
           Preencha o campo descrição
         </div>
       </div>
-    </div>
+    </div> -->
   </form>
   <footer>
     <button type="button" class="btn btn-primary">Salvar</button>

@@ -1,5 +1,4 @@
 export interface Login{
-  username: string,
-  rememberMe: boolean,
-  password: string
+  UserName: string,
+  Password: string
 }

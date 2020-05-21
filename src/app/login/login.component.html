@@ -1,24 +1,15 @@
+<div class="alert alert-danger text-center" *ngIf='mensagemRetorno'>
+  {{mensagemRetorno | json}}
+</div>
 <div class="form-login">
   <h1 class="titulo">Login</h1>
-  <form #form='ngForm'>
+  <form #form='ngForm' >
     <div class="row">
       <div class="col-md-12">
-        <label for="username">Usúario</label>
-        <input type="text" class="form-control" id="username" name="username" [(ngModel)]='login.username'/>
+        <label for="username">Usuário</label>
+        <input type="text" class="form-control" id="username" name="username" [(ngModel)]='login.UserName'/>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <label for="rememberMe">Lembrar de mim: </label>
-        <input
-          type="checkbox"
-          id="rememberMe"
-          name="rememberMe"
-          [(ngModel)]='login.rememberMe'
-        />
-      </div>
-    </div>
-
     <div class="row">
       <div class="col-md-12">
         <label for="password">Senha</label>
@@ -29,14 +20,14 @@
             id="password"
             name="password"
             class="form-control"
-            [(ngModel)]='login.password'
+            [(ngModel)]='login.Password'
           />
         </div>
       </div>
     </div>
   </form>
   <footer>
-    <button type="submit" class="btn btn-primary">Logar</button>
+    <button type="submit" class="btn btn-primary" (click)='onSubmit()'>Logar</button>
   </footer>
 </div>
 
