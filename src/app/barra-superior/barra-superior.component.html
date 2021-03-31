@@ -1,13 +1,26 @@
 <div>
-  <div class="item-group">
+  <div class="item-group" *ngIf='PlanoSelecionado' >
     <p>Inicial</p>
-    <p>R$ 2412,00</p>
+    <!-- <p>{{PlanoSelecionado.valorBase | currency: "BRL":"symbol":"1.2-2"}} </p> -->
+    <input
+      type="number"
+      class="form-control"
+      id="valor-inicial"
+      name="valorInicial"
+      (change) = "onChangeValorBase()"
+      [(ngModel)]='PlanoSelecionado.valorBase'
+    />
+
+
   </div>
   <div class="item-group">
     <p>Juros</p>
-    <p>R$ 2412,00</p>
+    <p>0.2</p>
   </div>
   <div class="item-group">
     <a [routerLink]="['/planos']" class="btn btn-success">Planos</a>
+  </div>
+  <div class="resumo-usuario">
+    <div class="btn btn-info" (click)='LoggoutClick()'>Loggout</div>
   </div>
 </div>

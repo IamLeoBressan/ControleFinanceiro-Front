@@ -1,0 +1,27 @@
+.form-usuario{
+  width: 70%;
+  min-width: 400px;
+  margin:10px auto;
+  border: 1px solid #fafafa;
+}
+
+.titulo{
+  text-align: center;
+  background-color: #333;
+  color: #fcfcfc;
+  padding: 10px 0;
+}
+
+.form-usuario form{
+  padding: 10px;
+}
+
+footer{
+  padding: 10px;
+  text-align: center;
+  background-color: #fafafa;
+}
+footer button{
+
+  margin-left: 10px;
+}

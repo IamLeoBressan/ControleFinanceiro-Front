@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Login } from './login';
+import { Login } from './interfaces/login';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {IToken} from './token';
+import {IToken} from './interfaces/token';
 import { tap, catchError, map } from 'rxjs/operators';
+import { IUsuario } from './interfaces/usuario';
 
-const AUTH_API = 'http://localhost:59710/users/login/';
+const AUTH_API = 'https://localhost:44390/users/login/';
+const CREATE_USER_API = 'https://localhost:44390/users';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -19,14 +21,12 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   Logar(Login: Login): Observable<IToken> {
-    return this.http.post<IToken>(AUTH_API, Login, httpOptions)
-      .pipe(
-        // map((token: any) => <IToken> {Token: token.token, Expiration: token.expiration}),
-        tap((token: IToken) => console.log(token)),
-        catchError(this.handleError<IToken>('logarService'))
-      )
-    ;
+    return this.http.post<IToken>(AUTH_API, Login, httpOptions);
   }
+
+  CriarUsuario(usuario: IUsuario){
+    return this.http.post<IToken>(CREATE_USER_API, usuario, httpOptions);
+    }
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

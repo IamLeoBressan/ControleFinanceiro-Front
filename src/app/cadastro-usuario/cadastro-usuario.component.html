@@ -1,0 +1,78 @@
+<div class="alert alert-danger text-center" *ngIf="mensagemRetorno">
+  {{ mensagemRetorno | json }}
+</div>
+<div class="form-usuario">
+  <h1 class="titulo">Cadastrar novo usuário</h1>
+  <form #form="ngForm">
+    <div class="row">
+      <div class="col-md-12">
+        <label for="nome">Nome: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="nome"
+          name="nome"
+          [(ngModel)]="Usuario.nome"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label for="sobrenome">Sobrenome: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="sobrenome"
+          name="sobrenome"
+          [(ngModel)]="Usuario.sobrenome"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label for="email">Email : </label>
+        <input
+          type="mail"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="Usuario.email"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          [(ngModel)]="Usuario.userName"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <label for="password">Senha</label>
+        <div>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            [(ngModel)]="Usuario.password"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+  <footer>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+      Criar
+    </button>
+    <button type="submit" class="btn btn-primary" (click)="OnVoltarClick()">
+      Voltar
+    </button>
+  </footer>
+</div>

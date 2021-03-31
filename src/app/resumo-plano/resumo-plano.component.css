@@ -1,0 +1,19 @@
+p{
+  background-color: #fcfcfc;
+  margin: 5px 0;
+}
+
+.active{
+  background-color: #dfdfdf !important;
+}
+
+p:hover{
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: 0.5s;
+  background-color: #f3f3f3;
+}
+
+.btn{
+  margin: 0 5px;
+}

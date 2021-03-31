@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-4">
+    <h4 class="text-center">Lista de Ciclos</h4>
+    <p
+      *ngFor="let ciclo of ciclos"
+      class="text-center {{ CssCicloAtivo(ciclo.id) }}"
+      (click)="CicloClick(ciclo)"
+    >
+      {{ ciclo.titulo }}
+    </p>
+  </div>
+  <div class="col-md-4">
+    <h4 class="text-center">Lista de Gastos</h4>
+    <div *ngIf='CicloAtivo && CicloAtivo.gastos.length > 0'>
+      <div class="row" *ngFor="let gasto of CicloAtivo.gastos">
+        <div class="col-md-6 text-center">
+          {{ gasto.titulo }}
+        </div>
+        <div class="col-md-6 text-center">
+          {{gasto.valor | currency: "BRL":"symbol":"1.2-2" }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 text-center">
+          Total
+        </div>
+        <div class="col-md-6 text-center">
+          {{TotalGastos() | currency: "BRL":"symbol":"1.2-2" }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h4 class="text-center">Lista de Ganhos</h4>
+    <div *ngIf='CicloAtivo && CicloAtivo.ganhos.length > 0'>
+      <div class="row" *ngFor="let ganho of CicloAtivo.ganhos">
+        <div class="col-md-6 text-center">
+          {{ ganho.titulo }}
+        </div>
+        <div class="col-md-6 text-center">
+          {{ganho.valor | currency: "BRL":"symbol":"1.2-2" }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 text-center">
+          Total
+        </div>
+        <div class="col-md-6 text-center">
+          <fa-icon [icon]="filmIcon"></fa-icon>
+          {{TotalGanhos() | currency: "BRL":"symbol":"1.2-2" }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,14 +1,18 @@
 <app-pop-up (closePop)='FecharPopUp()' *ngIf='PopUp'>
-  <app-cadastro-planos></app-cadastro-planos>
+  <app-cadastro-planos [atualizaLista]='AtualizarLista.bind(this)' (closePop)='FecharPopUp()' [PlanoEdicao]='PlanoEdicao'></app-cadastro-planos>
 </app-pop-up>
 <div class="container">
   <h1>Lista de Planos</h1>
+  <div class='alert alert-danger' *ngIf='MensagemRetorno'>
+    {{MensagemRetorno | json}}
+  </div>
   <table>
     <thead>
       <tr>
         <th>Id</th>
         <th>Titulo</th>
         <th>Ganhos Mensais</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +20,10 @@
         <td>{{plano.id}}</td>
         <td>{{plano.titulo}}</td>
         <td>{{plano.valorBase}}</td>
+        <td class='acoes'>
+          <button type='button' class="btn btn-danger" (click)='RemoverPlano(plano.id)'>Remover</button>
+          <button type='button' class='btn btn-warning' (click)='EditarPlano(plano)'>Editar</button>
+        </td>
       </tr>
     </tbody>
   </table>

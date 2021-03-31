@@ -1,10 +1,13 @@
 <div class="container">
-  <h1 class="titulo">Cadastro de novo plano</h1>
+  <h1 class="titulo">{{titulo}}</h1>
+  <div class="alert alert-danger text-center" *ngIf='mensagemRetorno'>
+    {{mensagemRetorno | json}}
+  </div>
   <form class="form-cadastro-plano" #form="ngForm">
     <div class="row">
       <div class="col-md-12">
         <label for="titulo">Título</label>
-        <input id="titulo" class="form-control" name='titulo' [(ngModel)]='plano.titulo' #validField='ngModel' required/>
+        <input id="titulo" class="form-control" name='titulo' [(ngModel)]='Plano.titulo' #validField='ngModel' required/>
         <div [hidden]='validField.valid || validField.untouched' class="alert alert-danger">
           Preencha o campo Titulo
         </div>
@@ -18,21 +21,12 @@
           class="form-control"
           id="valor-inicial"
           name="valorInicial"
-          [(ngModel)]='plano.valorBase'
+          [(ngModel)]='Plano.valorBase'
         />
       </div>
     </div>
-    <!-- <div class="row">
-      <div class="col-md-12">
-        <label for="descricao">Descrição</label>
-        <textarea rows="6" required id="descricao" name='descricao' class="form-control" [(ngModel)]='plano.titulo' #descrValid='ngModel'></textarea>
-        <div [hidden]='descrValid.valid || descrValid.untouched' class="alert alert-danger">
-          Preencha o campo descrição
-        </div>
-      </div>
-    </div> -->
   </form>
   <footer>
-    <button type="button" class="btn btn-primary">Salvar</button>
+    <button type="button" class="btn btn-primary" (click)='SalvarClick()'>Salvar</button>
   </footer>
 </div>

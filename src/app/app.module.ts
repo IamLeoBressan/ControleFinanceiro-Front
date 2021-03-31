@@ -13,6 +13,13 @@ import { CadastroPlanosComponent } from './cadastro-planos/cadastro-planos.compo
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { authInterceptorProviders } from './login/auth-interceptor';
+import { ResumoPlanoComponent } from './resumo-plano/resumo-plano.component';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { DetalhesCiclosComponent } from './detalhes-ciclos/detalhes-ciclos.component';
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { StoreModule } from '@ngrx/store';
+import { planoReducer } from './state/plano-reducer';
 
 @NgModule({
   declarations: [
@@ -23,13 +30,21 @@ import { authInterceptorProviders } from './login/auth-interceptor';
     CentroControleComponent,
     ListaPlanosComponent,
     PopUpComponent,
-    CadastroPlanosComponent
+    CadastroPlanosComponent,
+    ResumoPlanoComponent,
+    DetalhesCiclosComponent,
+    CadastroUsuarioComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ButtonsModule,
+    FontAwesomeModule,
+    StoreModule.forRoot({}, {}),
+    StoreModule.forFeature('planos', planoReducer)
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

@@ -4,12 +4,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CentroControleComponent } from './centro-controle/centro-controle.component';
 import { ListaPlanosComponent } from './lista-planos/lista-planos.component';
-
+import { LoginGuard } from './login/login-guard.guard';
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 
 const routes: Routes = [
-  { path: 'home', component: CentroControleComponent },
   { path: 'login', component: LoginComponent},
-  { path: 'planos', component: ListaPlanosComponent },
+  { path: 'novoUsuario', component: CadastroUsuarioComponent},
+  { path: 'home', canActivate: [LoginGuard], component: CentroControleComponent },
+  { path: 'planos', canActivate: [LoginGuard], component: ListaPlanosComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: AppComponent }
 ];

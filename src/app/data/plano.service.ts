@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { IPlano } from './plano';
+import { IPlano } from './interfaces/plano';
 import { catchError, map, tap } from 'rxjs/operators';
+import { IResumoFinanceiro } from './interfaces/resumo-financeiro';
 
-const BUSCAR_PLANOS_API = "https://localhost:44390/planos";
+const PLANOS_API = "https://localhost:44390/planos";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -19,12 +20,30 @@ export class PlanoService {
 
   BuscarPlanos(): Observable<IPlano[]> {
 
-    return this.http.get<IPlano[]>(BUSCAR_PLANOS_API, httpOptions)
+    return this.http.get<IPlano[]>(PLANOS_API, httpOptions)
     .pipe(
-      tap(_ => console.log('fetched planos')),
       catchError(this.handleError<IPlano[]>('getPlanos', []))
     );
   }
+
+  EditarPlano(plano: IPlano): Observable<IPlano>{
+    return this.http.put<IPlano>(PLANOS_API, plano);
+  }
+
+  CadastrarPlano(plano: IPlano): Observable<IPlano>{
+    plano.id = null;
+    return this.http.post<IPlano>(PLANOS_API, plano, httpOptions);
+  }
+
+  RemoverPlano(id: number): Observable<any>{
+    return this.http.delete(PLANOS_API + "/" + id);
+  }
+
+  GerarRendimentos(planoId: number, meses: number): Observable<IResumoFinanceiro[]>{
+    return this.http.get<IResumoFinanceiro[]>(PLANOS_API + "/" + planoId + "/rendimentos/" + meses, httpOptions);
+
+  }
+
     /**
    * Handle Http operation that failed.
    * Let the app continue.

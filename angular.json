@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "controle-financeiro"
+    }
+  },
+  "defaultProject": "controle-financeiro",
+  "cli": {
+    "analytics": "ac598d22-b318-4be7-aa3d-83ad9c8de322"
+  }
 }

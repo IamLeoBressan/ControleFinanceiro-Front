@@ -1,0 +1,13 @@
+.active{
+  background-color: #dfdfdf !important;
+}
+
+p:hover{
+  cursor: pointer;
+  background-color: #f3f3f3;
+}
+
+p{
+  background-color: #fcfcfc;
+  margin: 5px 0;
+}

@@ -1,8 +1,11 @@
 <div>
   <div class="row">
     <div class="col-md-7">
-      <app-barra-superior></app-barra-superior>
-      <app-lista-previsao></app-lista-previsao>
+      <app-barra-superior [PlanoSelecionado]='PlanoSelecionado' [AtualizarPlano]='AtualizarPlano.bind(this)'></app-barra-superior>
+      <app-lista-previsao [PlanoSelecionado]='PlanoSelecionado'></app-lista-previsao>
+    </div>
+    <div class="col-md-5">
+      <app-resumo-plano [PlanoSelecionado]='PlanoSelecionado' [Planos]='Planos' [atualizarPlano]='AtualizarPlano.bind(this)'></app-resumo-plano>
     </div>
   </div>
 </div>

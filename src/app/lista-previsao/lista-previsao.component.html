@@ -7,18 +7,18 @@
       <th>Rend. Salário</th>
       <th>Lucro</th>
       <th>Total</th>
-      <th>Plano</th>
+      <th>Ciclo</th>
       <th>Imprevistos</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor='let previsao of PrevisoesFinanceiras'>
       <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{previsao.anoMes}}</td>
+      <td>{{previsao.rendimentoJuros | currency: "BRL":"symbol":"1.2-2" }}</td>
+      <td>{{previsao.rendimentoSalario | currency: "BRL":"symbol":"1.2-2" }}</td>
+      <td>{{previsao.lucro | currency: "BRL":"symbol":"1.2-2" }}</td>
+      <td>{{previsao.valorTotal | currency: "BRL":"symbol":"1.2-2" }}</td>
       <td></td>
       <td></td>
     </tr>
