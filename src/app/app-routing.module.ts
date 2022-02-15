@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { CentroControleComponent } from './centro-controle/centro-controle.component';
-import { ListaPlanosComponent } from './lista-planos/lista-planos.component';
+import { ListaPlanosComponent } from './plano/lista-planos/lista-planos.component';
 import { LoginGuard } from './login/login-guard.guard';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 
@@ -17,7 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

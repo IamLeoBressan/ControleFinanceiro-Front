@@ -27,7 +27,6 @@ export class CentroControleComponent implements OnInit {
   }
 
   AtualizarPlano(plano: IPlano){
-    console.log(plano);
     this.PlanoSelecionado = plano;
   }
 

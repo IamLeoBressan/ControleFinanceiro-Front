@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IPlano } from '../data/interfaces/plano';
-import { PlanoService } from '../data/plano.service';
+import { IPlano } from '../../data/interfaces/plano';
+import { PlanoService } from '../../data/plano.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
 
@@ -37,7 +37,6 @@ export class CadastroPlanosComponent implements OnInit {
   }
 
   SalvarClick(): void {
-    console.log(this.edicao);
     (this.edicao?
       this.planoService.EditarPlano(this.Plano):
       this.planoService.CadastrarPlano(this.Plano)

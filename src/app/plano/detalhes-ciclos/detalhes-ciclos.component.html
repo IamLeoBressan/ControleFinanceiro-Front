@@ -31,7 +31,8 @@
     </div>
   </div>
   <div class="col-md-4">
-    <h4 class="text-center">Lista de Ganhos</h4>
+    <lista-ganho-gasto [ganhos]="CicloAtivo.ganhos"></lista-ganho-gasto>
+    <!-- <h4 class="text-center">Lista de Ganhos</h4>
     <div *ngIf='CicloAtivo && CicloAtivo.ganhos.length > 0'>
       <div class="row" *ngFor="let ganho of CicloAtivo.ganhos">
         <div class="col-md-6 text-center">
@@ -50,6 +51,6 @@
           {{TotalGanhos() | currency: "BRL":"symbol":"1.2-2" }}
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>

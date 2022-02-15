@@ -1,10 +1,10 @@
-export interface Ganho{
-  id: number,
-  titulo: number,
-  valor: number,
-  tipoMovi: TipoMovi,
-  anoContabilizar: number,
-  mesContabilizar: number
+export class Ganho{
+  id: number;
+  titulo: string;
+  valor: number;
+  tipoMovi: TipoMovi;
+  anoContabilizar: number;
+  mesContabilizar: number;
 }
 
 export enum TipoMovi{

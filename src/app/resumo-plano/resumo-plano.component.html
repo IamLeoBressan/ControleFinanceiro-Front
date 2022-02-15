@@ -1,8 +1,0 @@
-<div class="row">
-  <div class="btn-group ">
-    <label *ngFor='let plano of Planos' class="btn btn-primary" [(ngModel)]="PlanoSelecionado"
-           [btnRadio]="plano" tabindex="0" role="button">{{plano.titulo}}</label>
-  </div>
-</div>
-
-<app-detalhes-ciclos *ngIf='PlanoSelecionado' [ciclos]='PlanoSelecionado.ciclos'></app-detalhes-ciclos>

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IPlano } from '../data/interfaces/plano';
-import { PlanoService } from '../data/plano.service';
-import { IResumoFinanceiro } from '../data/interfaces/resumo-financeiro';
+import { IPlano } from '../../data/interfaces/plano';
+import { PlanoService } from '../../data/plano.service';
+import { IResumoFinanceiro } from '../../data/interfaces/resumo-financeiro';
 
 @Component({
   selector: 'app-lista-previsao',

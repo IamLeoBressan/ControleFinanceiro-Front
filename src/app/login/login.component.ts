@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     private storage: TokenStorageService ) { }
 
   tpSenha: string = 'password';
-  imgSenha: string = 'open';
+  imgSenha: string = 'lock';
   mensagemRetorno: any;
   login: Login = {
     UserName: '',
@@ -31,10 +31,10 @@ export class LoginComponent implements OnInit {
   VisualizarSenha(): void{
     if(this.tpSenha === 'password'){
       this.tpSenha = 'text';
-      this.imgSenha = 'lock';
+      this.imgSenha = 'open';
     }else{
       this.tpSenha = 'password';
-      this.imgSenha = 'open';
+      this.imgSenha = 'lock';
     }
   }
 
@@ -57,10 +57,9 @@ export class LoginComponent implements OnInit {
         if(error.error.mensagens){
           this.mensagemRetorno = error.error.mensagens;
         }else{
-          this.mensagemRetorno = error.message;
+          this.mensagemRetorno = "Ocorreu um erro ao realizar o Login, tente novamente mais tarde.";
         }
 
-        this.login.UserName = '';
         this.login.Password = '';
       }
     )

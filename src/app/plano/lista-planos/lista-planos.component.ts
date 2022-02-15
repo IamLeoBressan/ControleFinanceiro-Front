@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IPlano } from '../data/interfaces//plano';
-import { PlanoService } from '../data/plano.service';
+import { IPlano } from '../../data/interfaces//plano';
+import { PlanoService } from '../../data/plano.service';
 
 @Component({
   templateUrl: './lista-planos.component.html',

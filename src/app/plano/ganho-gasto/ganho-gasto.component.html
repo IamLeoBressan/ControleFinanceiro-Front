@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-5 text-center">
+    <span *ngIf="!EdicaoCampos">{{ ganho.titulo }}</span>
+    <input type="text" *ngIf="EdicaoCampos" [ngModel]="TituloAlterado">
+  </div>
+  <div class="col-md-5 text-center">
+    <span *ngIf="!EdicaoCampos">{{ganho.valor | currency: "BRL":"symbol":"1.2-2" }}</span>
+    <input type="text" *ngIf="EdicaoCampos" [(ngModel)]="ValorAlterado">
+  </div>
+  <div class="col-md-2" *ngIf="ModoEdicao">
+    <button type="button" class="btn btn-warning" (click)='OnClickToggleEdicaoCampos()'>{{TituloBotaoEdicao()}}</button>
+    <button type="button" class="btn btn-danger" (click)='OnClickCancelarRemoverCampo()'>{{TituloCancelarRemover()}}</button>
+  </div>
+</div>

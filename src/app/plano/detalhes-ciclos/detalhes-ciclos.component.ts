@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ICiclo } from '../data/interfaces/ciclo';
+import { ICiclo } from '../../data/interfaces/ciclo';
 import { faFilm } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -39,7 +39,5 @@ export class DetalhesCiclosComponent implements OnInit {
     return this.CicloAtivo.gastos.reduce((acum, value) => acum + value.valor, 0);
   }
 
-  TotalGanhos(){
-    return this.CicloAtivo.ganhos.reduce((acum, value) => acum + value.valor, 0);
-  }
+
 }
